@@ -28,7 +28,7 @@ Just follow the Steps Below.
 2. Install Java i.e. JDK-17.0.2
 3. Add JAVA_HOME & java from the above to the PATH
 4. Open x64 VS 2019 Native Tools Command Prompt
-![image](JQuotes-x64-Native-C-CommandPrompt.PNG)
+![image](JQuotes-x64-Native-C-CommandPrompt.png)
 5. Switch to the cloned Github location of pljava
 6. "[Path to Netbeans Root Folder]\netbeans\java\maven\bin\mvn" clean install -DskipTests <br/>
 Upon Success you should get something like the below: <br/>
@@ -47,7 +47,7 @@ OR If Jar already exists ....
 17. select sqlj.replace_jar('file:[Path to Downloaded JQuotes Repo with front slashes]/target/JQuotes-1.0-SNAPSHOT.jar', 'jquotes', true);
 18. select sqlj.set_classpath('public', 'jquotes');
 19. select quote();
-![image](quotes.PNG)
+![image](quotes.png)
 20. That's It!! You're all set! Get refreshed & inspired by the quotes!!!!
 
 ## What's next?
