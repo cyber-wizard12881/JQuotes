@@ -1,0 +1,16 @@
+SQLActions[]={
+"BEGIN INSTALL
+BEGIN PostgreSQL
+CREATE OR REPLACE FUNCTION quote()
+	RETURNS pg_catalog.varchar
+	LANGUAGE java IMMUTABLE
+	RETURNS NULL ON NULL INPUT
+	AS e'java.lang.String=com.winterop.jquotes.Quote.quote()'
+END PostgreSQL;
+END INSTALL",
+"BEGIN REMOVE
+BEGIN PostgreSQL
+DROP FUNCTION quote()
+END PostgreSQL;
+END REMOVE"
+}
