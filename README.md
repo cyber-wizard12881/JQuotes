@@ -36,19 +36,20 @@ Upon Success you should get something like the below: <br/>
 7. Run as Administrator: java -jar pljava-packaging/target/pljava-pg14.jar
 8. psql -U postgres
 9. GRANT USAGE ON LANGUAGE java TO PUBLIC;
-10. SET pljava.policy_urls TO '"file:[Path to Downloaded JQuotes Repo with front slashes]/JQuotes/pljava.policy","="';
-11. SET pljava.libjvm_location TO "[<Path to Java Root Folder]\jdk-17.0.2\bin\server\jvm.dll";
-12. CREATE EXTENSION pljava;
-13. GRANT USAGE ON LANGUAGE java TO PUBLIC;
-14. SET client_min_messages TO NOTICE;
-15. COPY [Path to pljava cloned repo with back slashes not escaped ]\pljava-api\target\pljava-api-2-SNAPSHOT.jar to ${project.basedir}/lib/pljava-api-2-SNAPSHOT.jar
-16. select sqlj.install_jar('file:[Path to Downloaded JQuotes Repo with front slashes]/target/JQuotes-1.0-SNAPSHOT.jar', 'jquotes', true);
+10. In the pljava.policy file in JQuotes, update the path to the JQuotes Repo on your local machine. (as mentioned in the policy file's codebase section)
+11. SET pljava.policy_urls TO '"file:[Path to Downloaded JQuotes Repo with front slashes]/JQuotes/pljava.policy","="';
+12. SET pljava.libjvm_location TO "[Path to Java Root Folder]\jdk-17.0.2\bin\server\jvm.dll";
+13. CREATE EXTENSION pljava;
+14. GRANT USAGE ON LANGUAGE java TO PUBLIC;
+15. SET client_min_messages TO NOTICE;
+16. COPY [Path to pljava cloned repo with back slashes not escaped ]\pljava-api\target\pljava-api-2-SNAPSHOT.jar to ${project.basedir}/lib/pljava-api-2-SNAPSHOT.jar
+17. select sqlj.install_jar('file:[Path to Downloaded JQuotes Repo with front slashes]/target/JQuotes-1.0-SNAPSHOT.jar', 'jquotes', true);
 OR If Jar already exists ....
-17. select sqlj.replace_jar('file:[Path to Downloaded JQuotes Repo with front slashes]/target/JQuotes-1.0-SNAPSHOT.jar', 'jquotes', true);
-18. select sqlj.set_classpath('public', 'jquotes');
-19. select quote();
+18. select sqlj.replace_jar('file:[Path to Downloaded JQuotes Repo with front slashes]/target/JQuotes-1.0-SNAPSHOT.jar', 'jquotes', true);
+19. select sqlj.set_classpath('public', 'jquotes');
+20. select quote();
 ![image](quotes.png)
-20. That's It!! You're all set! Get refreshed & inspired by the quotes!!!!
+21. That's It!! You're all set! Get refreshed & inspired by the quotes!!!!
 
 ## What's next?
 Play around with the code .... <br/>
@@ -58,6 +59,7 @@ Last of all ... understand the beauty of the interoperability & appreciate the e
 :-)
 
 ## Conclusion
-The PL/Java interoperability with PostgreSql was successfully done!!
-Cheers!!!
-Happy Coding!!!  
+The PL/Java interoperability with PostgreSql was successfully done!! <br/>
+Cheers!!! <br/>
+& <br/>
+Happy Coding!!!  <br/>
